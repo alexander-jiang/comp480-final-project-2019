@@ -1,0 +1,28 @@
+number of vectors inserted into BF = 100000
+desired FP rate = 0.001
+number of test vectors inserted into BF = 1000
+random seed = 99423
+
+for vector_dim = 10:
+actual FP rate = 0.001
+
+for vector_dim = 20:
+actual FP rate = 0.0
+
+for vector_dim = 100:
+actual FP rate = 0.002
+
+increase the number of test vectors to 5000 and loosen desired FP rate to 0.01
+since there's too much variance:
+
+for vector_dim = 10:
+actual FP rate = 0.0102
+
+for vector_dim = 30:
+actual FP rate = 0.0114
+
+for vector_dim = 50:
+actual FP rate = 0.0106
+
+for vector_dim = 100:
+actual FP rate = 0.0094

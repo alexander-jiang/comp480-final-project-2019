@@ -1,0 +1,224 @@
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 0.6931471805599453   avg jacc sim  0.8    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.6185217114297608
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 1.6922538587889284   avg jacc sim  0.8    N 10000
+                    Num min hash func 5
+                    fp_rate   :    0.3094658052626168
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 4.1314791474339065   avg jacc sim  0.8    N 10000
+                    Num min hash func 9
+                    fp_rate   :    0.05706615142630218
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 6.455436167865478   avg jacc sim  0.8    N 10000
+                    Num min hash func 11
+                    fp_rate   :    0.011398338185748258
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 6.931471805599452   avg jacc sim  0.8    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.008192795481207953
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 16.922538587889285   avg jacc sim  0.8    N 10000
+                    Num min hash func 5
+                    fp_rate   :    8.050820079164355e-06
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 41.31479147433907   avg jacc sim  0.8    N 10000
+                    Num min hash func 9
+                    fp_rate   :    3.6566739097550895e-13
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 64.55436167865477   avg jacc sim  0.8    N 10000
+                    Num min hash func 11
+                    fp_rate   :    3.6925147535123476e-20
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 0.6931471805599453   avg jacc sim  0.5    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.6185328565877507
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 11.090354888959125   avg jacc sim  0.5    N 10000
+                    Num min hash func 5
+                    fp_rate   :    0.00045899123284016296
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 177.445678223346   avg jacc sim  0.5    N 10000
+                    Num min hash func 9
+                    fp_rate   :    3.880344130937023e-54
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 709.782712893384   avg jacc sim  0.5    N 10000
+                    Num min hash func 11
+                    fp_rate   :    2.267153742853955e-214
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 6.931471805599452   avg jacc sim  0.5    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.008192943093702495
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 110.90354888959124   avg jacc sim  0.5    N 10000
+                    Num min hash func 5
+                    fp_rate   :    4.1213454051651405e-34
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 1774.4567822334598   avg jacc sim  0.5    N 10000
+                    Num min hash func 9
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 7097.827128933839   avg jacc sim  0.5    N 10000
+                    Num min hash func 11
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 0.6931471805599454   avg jacc sim  0.3    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.6185526720196938
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 85.573725995055   avg jacc sim  0.3    N 10000
+                    Num min hash func 5
+                    fp_rate   :    1.7540237490812475e-26
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 10564.657530253704   avg jacc sim  0.3    N 10000
+                    Num min hash func 9
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 117385.08366948561   avg jacc sim  0.3    N 10000
+                    Num min hash func 11
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 6.931471805599452   avg jacc sim  0.3    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.008193205523955225
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 855.73725995055   avg jacc sim  0.3    N 10000
+                    Num min hash func 5
+                    fp_rate   :    2.5217949445281345e-258
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 105646.57530253702   avg jacc sim  0.3    N 10000
+                    Num min hash func 9
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 1173850.836694856   avg jacc sim  0.3    N 10000
+                    Num min hash func 11
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 0.6931471805599453   avg jacc sim  0.1    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.6186517840924988
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 6931.471805599451   avg jacc sim  0.1    N 10000
+                    Num min hash func 5
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 69314718.0559945   avg jacc sim  0.1    N 10000
+                    Num min hash func 9
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 10000   Num hash func per bloom filter 6931471805.599448   avg jacc sim  0.1    N 10000
+                    Num min hash func 11
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.6185179965404757
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 6.931471805599452   avg jacc sim  0.1    N 10000
+                    Num min hash func 1
+                    fp_rate   :    0.008194517835141111
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 69314.71805599451   avg jacc sim  0.1    N 10000
+                    Num min hash func 5
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 693147180.559945   avg jacc sim  0.1    N 10000
+                    Num min hash func 9
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.008192746277747917
+                
+
+                ### Knowing distribution beforehand (weight = avg jacc sim over N)
+                    Total hash space size 100000   Num hash func per bloom filter 69314718055.99448   avg jacc sim  0.1    N 10000
+                    Num min hash func 11
+                    fp_rate   :    0.0
+                    vanila_fp_rate : 0.008192746277747917
+                

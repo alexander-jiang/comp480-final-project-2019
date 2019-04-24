@@ -26,3 +26,6 @@ actual FP rate = 0.0106
 
 for vector_dim = 100:
 actual FP rate = 0.0094
+
+for vector_dim = 300:
+actual FP rate = 0.0102

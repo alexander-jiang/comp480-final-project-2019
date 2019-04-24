@@ -153,5 +153,7 @@ def main():
             json.dump(empirical_fp_rates, f)
         with open(f"bf_dimensionality_insert_times.json", "w") as f:
             json.dump(insert_times, f)
+    
+    generate_plots(vector_dims, desired_fp_rate)
 
 if __name__ == "__main__": main()

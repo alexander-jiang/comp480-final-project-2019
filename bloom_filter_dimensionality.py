@@ -7,9 +7,14 @@ import math
 import random
 import sys
 import numpy as np
+import json
+import time
+from tqdm import tqdm
 from bitarray import bitarray
+import matplotlib
+import matplotlib.pyplot as plt
 
-# hash into a 32-bit unsigned int i.e. R = 2**32, assuming 64-bit machine word
+# hash into a 32-bit unsigned int i.e. R = 2^32, assuming 64-bit machine word
 def universal_hash():
     M = np.uint64(32) # how many bits for # of bins?
     w = np.uint64(64) # how many bits for a machine word? (for efficient execution)
@@ -68,41 +73,87 @@ class BloomFilter():
 def generate_random_vectors(vector_dim=100, num_vectors=100000):
     return np.random.randn(num_vectors, vector_dim) # dtype is float64
 
+def generate_plots(vector_dims, desired_fp_rate):
+    with open(f"bf_dimensionality_fp_rates.json", "r") as f:
+        empirical_fp_rates = json.load(f)
+    with open(f"bf_dimensionality_insert_times.json", "r") as f:
+        insert_times = json.load(f)
+
+    empirical_fp_rate_means = []
+    empirical_fp_rate_stds = []
+    for vector_dim in vector_dims:
+        empirical_fp_rate_means.append(np.mean(empirical_fp_rates[str(vector_dim)]))
+        empirical_fp_rate_stds.append(np.std(empirical_fp_rates[str(vector_dim)]))
+
+    fig1, ax1 = plt.subplots()
+    width = 0.15
+    ind = np.arange(len(vector_dims))
+    newp = ax1.bar(ind, empirical_fp_rate_means, width, yerr=empirical_fp_rate_stds)
+    ax1.axhline(y=desired_fp_rate, linestyle='--', color='black')
+    ax1.set_xticks(ind)
+    ax1.set_xticklabels([f"d = {vector_dim}" for vector_dim in vector_dims])
+    ax1.set_ylabel("Mean & std dev of empirical FP rate (10 trials)")
+    ax1.set_title("Empirical FP rate vs. vector dimension")
+    fig1.savefig("figures/bf_dimensionality_fp_rates.png")
+
+
 def main():
     random.seed(99423)
-    vector_dim = 300
-    num_vectors = 100000
+    vector_dims = [10, 30, 50, 100, 300]
+    num_vectors = 10000
     desired_fp_rate = 0.01
+    num_trials = 10
 
-    vectors = generate_random_vectors(vector_dim=vector_dim, num_vectors=num_vectors)
-    bf = BloomFilter(num_vectors, desired_fp_rate, universal_hash_vectors, vector_dim)
-    count = 0
-    for vec in vectors:
-        if count % 1000 == 0:
-            print(f"inserted {count} / {num_vectors}")
-        bf.insert(vec)
-        count += 1
+    empirical_fp_rates = {}
+    insert_times = {}
+    for vector_dim in vector_dims:
+        empirical_fp_rates[vector_dim] = []
+        insert_times[vector_dim] = []
+        for trial_num in range(num_trials):
+            print(f"Vector dimension = {vector_dim}, trial {trial_num + 1}")
+            vectors = generate_random_vectors(vector_dim=vector_dim, num_vectors=num_vectors)
+            bf = BloomFilter(num_vectors, desired_fp_rate, universal_hash_vectors, vector_dim)
 
-    # count = 0
-    # for vec in vectors:
-    #     if count % 1000 == 0:
-    #         print(f"tested {count} / {num_vectors}")
-    #     if not bf.test(vec):
-    #         print(f"ERROR false negative detected in vanilla Bloom filter!!")
-    #         print(f"key: {vec}")
-    #     count += 1
+            print(f"Inserting {num_vectors} vectors")
+            insert_start = time.process_time()
+            count = 0
+            for vec in tqdm(vectors):
+                # if count % 1000 == 0:
+                #     print(f"inserted {count} / {num_vectors}")
+                bf.insert(vec)
+                count += 1
+            insert_time = time.process_time() - insert_start
 
-    num_test_vectors = 5000
-    test_vectors = generate_random_vectors(vector_dim=vector_dim, num_vectors=num_test_vectors)
-    fp_count = 0
-    for test_vec in test_vectors:
-        if test_vec in vectors:
-            num_test_vectors -= 1
-            continue
-        if bf.test(test_vec):
-            fp_count += 1
-    fp_rate = float(fp_count) / num_test_vectors
-    print("Actual fp rate: ", fp_rate)
-    print("Expected fp rate: ", desired_fp_rate)
+            # count = 0
+            # for vec in vectors:
+            #     if count % 1000 == 0:
+            #         print(f"tested {count} / {num_vectors}")
+            #     if not bf.test(vec):
+            #         print(f"ERROR false negative detected in vanilla Bloom filter!!")
+            #         print(f"key: {vec}")
+            #     count += 1
+
+            num_test_vectors = 5000
+            test_vectors = generate_random_vectors(vector_dim=vector_dim, num_vectors=num_test_vectors)
+            fp_count = 0
+            for test_vec in test_vectors:
+                if test_vec in vectors:
+                    num_test_vectors -= 1
+                    continue
+                if bf.test(test_vec):
+                    fp_count += 1
+            fp_rate = float(fp_count) / num_test_vectors
+            print("Actual fp rate: ", fp_rate)
+            print("Expected fp rate: ", desired_fp_rate)
+
+            empirical_fp_rates[vector_dim].append(fp_rate)
+            insert_times[vector_dim].append(insert_time)
+
+        with open(f"bf_dimensionality_fp_rates.json", "w") as f:
+            json.dump(empirical_fp_rates, f)
+        with open(f"bf_dimensionality_insert_times.json", "w") as f:
+            json.dump(insert_times, f)
+    
+    generate_plots(vector_dims, desired_fp_rate)
 
 if __name__ == "__main__": main()
